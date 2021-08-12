@@ -1,0 +1,70 @@
+
+.NavOut {
+  border-bottom: 1px solid rgb(156, 149, 149);
+  height: 5vh;
+  padding: 10px;
+  text-align: left;
+}
+.NavOut > div {
+  padding: 10px;
+}
+
+
+.HomeOut {
+  border: 1px solid tomato;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.loginBtn {
+  border-radius: 4px;
+  margin: 20px;
+  margin-top: 40px;
+  text-align: center;
+  height: 40px;
+  width: 150px;
+  background-color: #00c853;
+  cursor: pointer;
+}
+.loginBtn:hover {
+  transform: scale(1.05);
+  letter-spacing: 0.1rem;
+}
+.loginBtn > div {
+  margin: 13px;
+  color: white;
+  font-weight: bold;
+}
+
+.filterOut {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+}
+.streamBtns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  margin: 20px;
+}
+.filterBtn {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  /* border: 1px solid black; */
+  margin: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+.filterBtnName {
+  border: 1px solid rgb(156, 149, 149);
+  border-radius: 4px;
+  color : rgb(156, 149, 149);
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+  /* padding: 20px; */
+}
+.filterBtnName:hover {
+  transform: scale(1.05);
+  letter-spacing: 0.1rem;
+}
