@@ -126,10 +126,15 @@
   border-left: 1px solid #f0f1f2;
 }
 
+.navlink {
+  text-decoration: none !important;
+
+}
 .title {
   margin: 20px;
   font-size: 20px;
   font-weight: 900;
+  color: black;
   cursor: pointer;
   /* transition-duration: 0.3s; */
 }
@@ -187,7 +192,7 @@
 /* @media screen and (max-width: 901px) {
   width: 60%;
 } */
-
+/* 필터부분 */
 .FilterOut {
   position: absolute;
   inset: 0;
@@ -229,4 +234,52 @@
   background-color: #00c853;
   cursor: pointer;
   color: white;
+}
+
+
+/* 디테일 */
+.DetailOut {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.DetailQBody {
+  border: 1px solid #00c853;
+  border-radius: 10px;
+  margin: 20px 100px 20px 100px;
+  margin-top: 0px;
+}
+.DetailTitle {
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 900;
+  color: black;
+}
+.DetailContents {
+  margin: 20px;
+  margin-top: 0;
+  color: #5b6063;
+  font-size: 18px;
+}
+.DetailCreatedAt {
+  color: #cacdcf;
+  padding: 0 20px 20px 20px;
+}
+
+.DetailReplyCnt {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 22fr;
+  /* flex-direction: column; */
+  margin: 20px 100px 20px 100px;
+}
+.count {
+  color: #00c853;
+}
+
+.replyBody {
+  border: 1px solid #cacdcf;
+  border-radius: 10px;
+  margin: 20px 100px 20px 100px;
+  margin-top: 0px;
 }

@@ -1,22 +1,28 @@
-import React from 'react'
+import React from "react";
+import Detail from "../pages/Detail";
+import { Link, NavLink } from "react-router-dom";
 
-function Question(){
-    return(
-        <div className="QuestionOut">
-            <div className="categoryOut">
-              <div className="categoryName">category_name</div>
-              <div className="categoryId">id</div>
-            </div>
-            <div className="idDateOut">
-                <div className="userId">user_Id</div>
-                <div className="createdAt">created_at(2020-02-02)</div>
-            </div>
-            <div className="contentsOut">
-                <div className="title">Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title</div>
-                <div className="contents">contents contents contents contents contents contents contents contents contents contents contents contents contents</div>
-            </div>
+function Question({ id, title, contents, now, replys }) {
+  return (
+    // <li>
+    <NavLink to={"/detail/" + id} className="navlink" id={id}>
+      <div className="QuestionOut">
+        <div className="categoryOut">
+          <div className="categoryName">category_name</div>
+          <div className="categoryId">id</div>
         </div>
-    )
+        <div className="idDateOut">
+          <div className="userId">user_Id</div>
+          <div className="createdAt">{now}</div>
+        </div>
+        <div className="contentsOut">
+          <div className="title">{title}</div>
+          <div className="contents">{contents}</div>
+        </div>
+      </div>
+    </NavLink>
+    // </li>
+  );
 }
 
 export default Question;
