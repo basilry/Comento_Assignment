@@ -1,4 +1,3 @@
-
 /* 상단 네비바 */
 .NavOut {
   border-bottom: 1px solid #f0f1f2;
@@ -10,7 +9,6 @@
   padding: 10px;
 }
 
-
 /* 홈 전체화면 */
 .HomeOut {
   margin: 0 100px 0 100px;
@@ -18,6 +16,11 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
   /* align-items: center; */
+}
+@media screen and (max-width: 768px) {
+  .HomeOut {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 로그인 버튼관련 */
@@ -32,7 +35,7 @@
   width: 230px;
   background-color: #00c853;
   cursor: pointer;
-  box-shadow : 1px 1px 1px black;
+  box-shadow: 1px 1px 1px black;
   transition-duration: 0.3s;
 }
 .loginBtn:hover {
@@ -45,6 +48,11 @@
   color: white;
   font-weight: bold;
 }
+@media screen and (max-width: 768px) {
+  .loginBtn {
+    display: none;
+  }
+}
 
 /* 오름차순/내림차순 필터관련 */
 .filterOut {
@@ -54,15 +62,25 @@
   font-size: 15px;
 }
 .streamBtns {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
   margin: 20px;
   margin-bottom: 10px;
 }
+.greenDot {
+  width: 8px;
+  margin: 2px;
+}
 .upStream {
+  margin-right: 10px;
   cursor: pointer;
   transition-duration: 0.3s;
   color: #5a6167;
+}
+.grayDot {
+  width: 8px;
+  margin: 2px;
 }
 .downStream {
   cursor: pointer;
@@ -78,7 +96,7 @@
 .filterBtnName {
   border: 2px solid #f0f1f2;
   border-radius: 4px;
-  color : #cbd0d6;
+  color: #cbd0d6;
   width: 50px;
   height: 20px;
   text-align: center;
@@ -92,7 +110,6 @@
   letter-spacing: 0.1rem;
 }
 
-
 /* 퀘스쳔 컴포넌트 부분 */
 .QuestionOut {
   border: 2px solid #f0f1f2;
@@ -104,7 +121,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-bottom: 1px solid #f0f1f2;
-  margin : 20px;
+  margin: 20px;
   padding-bottom: 10px;
   color: #cbd0d6;
 }
@@ -115,7 +132,7 @@
 .idDateOut {
   display: grid;
   grid-template-columns: 1fr 10fr;
-  margin : 20px;
+  margin: 20px;
 }
 .userId {
   color: #00c853;
@@ -125,10 +142,14 @@
   padding-left: 15px;
   border-left: 1px solid #f0f1f2;
 }
+@media screen and (max-width: 768px) {
+  .createdAt {
+    display: none;
+  }
+}
 
 .navlink {
   text-decoration: none !important;
-
 }
 .title {
   margin: 20px;
@@ -147,7 +168,6 @@
   color: #777b81;
 }
 
-
 /* 스폰서부분 */
 .sponserOut {
   margin: 20px;
@@ -164,6 +184,13 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
+@media screen and (max-width: 768px) {
+  .sponBodyOut {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .sponPics {
   /* border: 1px solid #f0f1f2; */
   width: 180px;
@@ -172,7 +199,15 @@
   color: #e9ecee;
   text-align: center;
   align-items: center;
-  padding:40px 60px;
+  padding: 40px 60px;
+}
+@media screen and (max-width: 768px) {
+  .sponPics {
+    padding: 60px;
+    margin: 20px;
+    width: 250px;
+    height: 100px;
+  }
 }
 .sponContentsOut {
   margin: 0 0 20px 20px;
@@ -184,10 +219,8 @@
   margin-bottom: 20px;
 }
 .sponContents {
-  color : #777b81;
+  color: #777b81;
 }
-
-
 
 /* @media screen and (max-width: 901px) {
   width: 60%;
@@ -210,30 +243,75 @@
   position: relative;
   background-color: white;
 }
+@media screen and (max-width: 768px) {
+  .FilterBody {
+    padding: 20px;
+    width: 250px;
+    height: 250px;
+  }
+}
 .BtnOut {
   text-align: right;
   align-items: right;
-
 }
 .FilterXBtn {
-  /* width: 430px; */
-  margin-top: 20px;
-  border-radius: 50%;
+  margin-top: 10px;
   position: absolute;
+  top: 0;
+  left: 420px;
   cursor: pointer;
-  transition: 0.2s all;
-  border: 1px solid green;
+}
+@media screen and (max-width: 768px) {
+  .FilterXBtn {
+    left: 260px;
+  }
+}
+.grayClose {
+  width: 12px;
+  margin: 2px;
 }
 
 .filterSave {
+  border-radius: 3px;
   width: 100px;
   height: 40px;
   text-align: center;
-  left: -100;
-  bottom: -100;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
   background-color: #00c853;
   cursor: pointer;
   color: white;
+}
+@media screen and (max-width: 768px) {
+  .filterSave {
+    width: 250px;
+  }
+}
+.saveBtnName {
+  margin: 12px;
+}
+
+.FilterName {
+  margin: 20px 0 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.FilterCategory {
+  font-size: 18px;
+  margin: 10px 0 0 20px;
+  color: #75797c;
+  display: flex;
+}
+.checkbox {
+  width: 20px;
+	height: 20px;
+	cursor: pointer;
+  border: 1px solid #75797c;
+}
+.categoryName {
+  margin: 2px;
 }
 
 

@@ -1,18 +1,47 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useState } from "react";
 import Question from "../components/Question";
 import Sponser from "../components/Sponser";
+import greenDot from "../green_dot.png";
+import grayDot from "../gray_dot.png";
+import DummyQuestions from "../DummyDatas/DummyQuestions";
 
-function Home({ datas, handlePopup }) {
-  // {id, title, contents, now, replys, handlePopup}
-  console.log(datas)
+const getPostList = (page) => {
+  return DummyQuestions.filter((post) => post.page === page);
+};
 
+function Home({ handlePopup, handleTempData }) {
   // 오름차순, 내림차순 관련 스테이트 훅
   const [isStream, setStream] = useState(true);
 
   const handleStream = () => {
     setStream(!isStream);
   };
+
+  // 게시물 관련
+  const [replys, setReplys] = useState(2);
+
+  const [page, setPage] = useState(1);
+  const [posts, setPosts] = useState(getPostList(1));
+
+  const handleScroll = useCallback(() => {
+    const { innerHeight } = window;
+    const { scrollHeight } = document.body;
+    const { scrollTop } = document.documentElement;
+
+    if (Math.round(scrollTop + innerHeight) >= scrollHeight) {
+      setPosts(posts.concat(getPostList(page + 1)));
+      setPage((prevPage) => prevPage + 1);
+    }
+  }, [page, posts]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, true);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll, true);
+    };
+  }, [handleScroll]);
 
   return (
     <div className="HomeOut">
@@ -22,8 +51,14 @@ function Home({ datas, handlePopup }) {
       <div className="homeBody">
         <div className="filterOut">
           <div className="streamBtns">
-            <div className="upStream">오름차순</div>
-            <div className="downStream">내림차순</div>
+            <div className="upStream">
+              <img src={greenDot} alt="greenDot" className="greenDot" />
+              오름차순
+            </div>
+            <div className="downStream">
+              <img src={grayDot} alt="grayDot" className="grayDot" />
+              내림차순
+            </div>
           </div>
           <div className="filterBtn">
             <div></div>
@@ -32,25 +67,19 @@ function Home({ datas, handlePopup }) {
             </div>
           </div>
         </div>
-        {
-        // count % 4 === 0 ? (
-        //   <Sponser />
-        // ) : (
-          datas.map((data) => {
-            // count+= 1
-            return (
-              <Question
-                id={data.id}
-                title={data.title}
-                contents={data.contents}
-                now={data.now}
-                replys={data.replys}
-              />
-            );
-          })
-        // )
-        }
-        <Sponser />
+        {posts.map((post, idx) => {
+          return (
+            <Question
+              id={idx}
+              title={post.title}
+              contents={post.contents}
+              now={post.now}
+              replys={post.replys}
+              handleTempData={handleTempData}
+            />
+          );
+        })}
+          <Sponser />
       </div>
     </div>
   );

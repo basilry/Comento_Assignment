@@ -3,8 +3,8 @@ import Detail from "../pages/Detail";
 import { Link, NavLink } from "react-router-dom";
 
 function Question({ id, title, contents, now, replys }) {
+
   return (
-    // <li>
     <NavLink to={"/detail/" + id} className="navlink" id={id}>
       <div className="QuestionOut">
         <div className="categoryOut">
@@ -16,12 +16,13 @@ function Question({ id, title, contents, now, replys }) {
           <div className="createdAt">{now}</div>
         </div>
         <div className="contentsOut">
-          <div className="title">{title}</div>
-          <div className="contents">{contents}</div>
+          <div className="title">
+            {title.length >= 25 ? title.slice(0, 25) + "..." : title}
+          </div>
+          <div className="contents">{contents.length >= 35 ? contents.slice(0, 35) + "..." : contents}</div>
         </div>
       </div>
     </NavLink>
-    // </li>
   );
 }
 

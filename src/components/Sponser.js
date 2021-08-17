@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import DummySponser from "../DummyDatas/DummySponser";
 
 function Sponser() {
   return (
@@ -7,8 +8,16 @@ function Sponser() {
       <div className="sponBodyOut">
         <div className="sponPics">X</div>
         <div className="sponContentsOut">
-          <div className="sponTitle">Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title</div>
-          <div className="sponContents">contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents contents</div>
+          <div className="sponTitle">
+            {DummySponser.title.length >= 45
+              ? DummySponser.title.slice(0, 45) + "..."
+              : DummySponser.title}
+          </div>
+          <div className="sponContents">
+            {DummySponser.contents.length >= 45
+              ? DummySponser.contents.slice(0, 45) + "..."
+              : DummySponser.contents}
+          </div>
         </div>
       </div>
     </div>

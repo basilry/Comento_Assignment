@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 
-function Detail({id, title, contents, now, replys}) {
+function Detail(props) {
 
-    console.log(id)
+  console.log(props)
 
   return (
-    <div className="DetailOut" key={id}>
+    <div className="DetailOut">
       <div className="DetailQBody">
-        <div className="DetailTitle">{title}</div>
-        <div className="DetailContents">{contents}</div>
-        <div className="DetailCreatedAt">{now}</div>
+        <div className="DetailTitle">{}</div>
+        <div className="DetailContents">{}</div>
+        <div className="DetailCreatedAt">{}</div>
       </div>
       <div className="DetailReplyCnt">
         답변
-        <div className="count">{replys}</div>
+        <div className="count">{}</div>
       </div>
       <div className="replyBody">
         <div className="replyTitle"></div>
