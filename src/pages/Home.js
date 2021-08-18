@@ -6,12 +6,29 @@ import greenDot from "../green_dot.png";
 import grayDot from "../gray_dot.png";
 import DummyQuestions from "../DummyDatas/DummyQuestions";
 import { Link, NavLink } from "react-router-dom";
+import axios from "axios";
 
 const getPostList = (page) => {
   return DummyQuestions.filter((post) => post.page === page);
 };
 
 function Home({ handlePopup }) {
+
+
+  // !!만약 서버와 연결을 한다면..
+  // const [datas, setDatas] = useState([]);
+  // useEffect(() => {
+  //   axios.get("serverURL")
+  //   .then(res => {
+  //     console.log(res);
+  //     setDatas(res.data.questions);
+  //   })
+  //   .catch(err => console.log(err))
+  // })
+  // 이를 통해 datas라는 배열 상태에다, 서버에서 받아온 데이터 배열을 할당해주면 된다. 그 후는 콘솔로그를 보면서 서버에서 전송해준 데이터 형태를 확인해가면서 할당을 시켜줘야 할 듯 하다.
+
+
+
   // 오름차순, 내림차순 관련 스테이트 훅
   const [isStream, setStream] = useState("up");
 
