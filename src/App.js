@@ -5,6 +5,7 @@ import Detail from "./pages/Detail";
 import Nav from "./components/Nav";
 import { useEffect, useState } from "react";
 import Filter from "./components/Filter";
+import DummyQuestions from "./DummyDatas/DummyQuestions";
 
 function App() {
   // 홈페이지 여부를 갖고 상단 내비바 조절
@@ -20,13 +21,6 @@ function App() {
     console.log("pop");
   };
 
-  // 퀘스천 게시물 아이디 대응 되는 상태 관리
-  const [tempData, setTemp] = useState([]);
-
-  const handleTempData = (data) => {
-    setTemp(data);
-  };
-
   return (
     <>
       <BrowserRouter>
@@ -34,14 +28,14 @@ function App() {
         <Switch>
           <Route
             path="/detail/:id"
-            render={() => <Detail />}
+            render={() => <Detail DummyQuestions={DummyQuestions} />}
             handleIsHome={handleIsHome}
           />
           <Route
             exact
             path="/"
             render={() => (
-              <Home handleTempData={handleTempData} handlePopup={handlePopup} />
+              <Home handlePopup={handlePopup} />
             )}
           />
         </Switch>

@@ -1,3 +1,7 @@
+li {
+  list-style-type: none;
+}
+
 /* 상단 네비바 */
 .NavOut {
   border-bottom: 1px solid #f0f1f2;
@@ -20,6 +24,11 @@
 @media screen and (max-width: 768px) {
   .HomeOut {
     grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  .HomeOut {
+    margin: 0;
   }
 }
 
@@ -47,6 +56,16 @@
   margin: 20px;
   color: white;
   font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+  .loginBtn {
+    width: 200px
+  }
+}
+@media screen and (max-width: 900px) {
+  .loginBtn {
+    width: 150px
+  }
 }
 @media screen and (max-width: 768px) {
   .loginBtn {
@@ -343,16 +362,42 @@
   color: #cacdcf;
   padding: 0 20px 20px 20px;
 }
+@media screen and (max-width: 768px) {
+  .DetailOut {
+    margin: 0;
+  }
+  .DetailQBody {
+    margin: 20px 0 20px 0;
+    border: 2px solid #00c853;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+  }
+  .DetailTitle {
+    margin: 20px 0 20px 0;
+  }
+  .DetailContents {
+    margin: 20px 0 20px 0;
+  }
+  .DetailCreatedAt {
+    padding: 0 20px 20px 0;
+  }
+}
 
 .DetailReplyCnt {
   font-size: 16px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 22fr;
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: row;
   margin: 20px 100px 20px 100px;
 }
 .count {
+  margin-left: 5px;
   color: #00c853;
+}
+@media screen and (max-width: 768px) {
+  .DetailReplyCnt {
+    margin: 20px 0 0 0;
+  }
 }
 
 .replyBody {
@@ -360,4 +405,59 @@
   border-radius: 10px;
   margin: 20px 100px 20px 100px;
   margin-top: 0px;
+}
+.replyUser {
+  border-bottom: 1px solid #cacdcf;;
+  margin: 20px;
+  color: #696c6e;
+}
+.replyContents {
+  margin: 20px;
+}
+.replyCreatedAt {
+  margin: 20px;
+  color: #cacdcf;
+}
+.backBtn {
+  display: none;
+  border-bottom: 2px solid #d0d5d8;
+  margin: 20px 0 20px 0;
+}
+.grayBack {
+  /* display: none; */
+  width: 10px;
+  margin: 20px 0 20px 0;
+}
+@media screen and (max-width: 768px) {
+  .replyBody {
+    margin: 20px 0 20px 0;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+  }
+  .replyUser {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .replyContents {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .replyCreatedAt {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .backBtn {
+    display: block;
+  }
+  .grayBack {
+    cursor: pointer;
+    transition-duration: 0.3s;
+  }
+  .grayBack:hover {
+    /* transform: scale(1.05);
+    letter-spacing: 1rem; */
+    width: 11px;
+    /* box-shadow: none; */
+  }
 }

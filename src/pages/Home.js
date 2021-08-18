@@ -5,22 +5,24 @@ import Sponser from "../components/Sponser";
 import greenDot from "../green_dot.png";
 import grayDot from "../gray_dot.png";
 import DummyQuestions from "../DummyDatas/DummyQuestions";
+import { Link, NavLink } from "react-router-dom";
 
 const getPostList = (page) => {
   return DummyQuestions.filter((post) => post.page === page);
 };
 
-function Home({ handlePopup, handleTempData }) {
+function Home({ handlePopup }) {
   // 오름차순, 내림차순 관련 스테이트 훅
-  const [isStream, setStream] = useState(true);
+  const [isStream, setStream] = useState("up");
 
-  const handleStream = () => {
-    setStream(!isStream);
+  const handleStream = (e) => {
+    // setStream(!isStream);
   };
 
   // 게시물 관련
   const [replys, setReplys] = useState(2);
 
+  // 무한스크롤 관련
   const [page, setPage] = useState(1);
   const [posts, setPosts] = useState(getPostList(1));
 
@@ -69,17 +71,18 @@ function Home({ handlePopup, handleTempData }) {
         </div>
         {posts.map((post, idx) => {
           return (
-            <Question
-              id={idx}
-              title={post.title}
-              contents={post.contents}
-              now={post.now}
-              replys={post.replys}
-              handleTempData={handleTempData}
-            />
+            <Link to={"/detail/id=" + post.id} className="navlink" key={post.id}>
+              <Question
+                key={idx}
+                title={post.title}
+                contents={post.contents}
+                now={post.now}
+                replys={post.replys}
+              />
+            </Link>
           );
         })}
-          <Sponser />
+        <Sponser />
       </div>
     </div>
   );
