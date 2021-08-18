@@ -2,6 +2,13 @@ import React from "react";
 import grayClose from "../gray_close.png";
 
 function Filter(props) {
+
+  const handleClick = () => {
+
+    alert("선택하신 필터가 저장되었습니다!")
+    props.handlePopup()
+  }
+
   return (
     <div className="FilterOut">
       <div className="FilterBody">
@@ -24,7 +31,7 @@ function Filter(props) {
           <div className="categoryName">category_name</div>
         </div>
         <div className="filterSave">
-          <div className="saveBtnName">저장하기</div>
+          <div className="saveBtnName" onClick={() => {handleClick()}}>저장하기</div>
         </div>
       </div>
     </div>

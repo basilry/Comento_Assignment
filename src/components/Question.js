@@ -12,6 +12,7 @@ function Question({ id, title, contents, now, replys }) {
       </div>
       <div className="idDateOut">
         <div className="userId">user_Id</div>
+        <div className="idDateBar">|</div>
         <div className="createdAt">{now}</div>
       </div>
       <div className="contentsOut">

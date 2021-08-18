@@ -2,29 +2,40 @@ li {
   list-style-type: none;
 }
 
+/* 참조컬러 */
+$grayBorder: #f0f1f2;
+$comentoGreen: #00c853;
+$grayChar: #cbd0d6;
+$grayContents: #777b81;
+
 /* 상단 네비바 */
+
 .NavOut {
   border-bottom: 1px solid #f0f1f2;
   height: 5vh;
   padding: 10px;
   text-align: left;
-}
-.NavOut > div {
-  padding: 10px;
+
+  > div {
+    padding: 10px;
+  }
 }
 
 /* 홈 전체화면 */
+
 .HomeOut {
   margin: 0 100px 0 100px;
   height: 90vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
+
 @media screen and (max-width: 768px) {
   .HomeOut {
     grid-template-columns: 1fr;
   }
 }
+
 @media screen and (max-width: 600px) {
   .HomeOut {
     margin: 0;
@@ -32,6 +43,7 @@ li {
 }
 
 /* 로그인 버튼관련 */
+
 .loginBtn {
   border-radius: 4px;
   margin: 20px;
@@ -41,31 +53,35 @@ li {
   font-size: 23px;
   height: 60px;
   width: 230px;
-  background-color: #00c853;
+  background-color: $comentoGreen;
   cursor: pointer;
   box-shadow: 1px 1px 1px black;
   transition-duration: 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+    letter-spacing: 0.1rem;
+  }
+
+  > div {
+    margin: 20px;
+    color: white;
+    font-weight: bold;
+  }
 }
-.loginBtn:hover {
-  transform: scale(1.05);
-  letter-spacing: 0.1rem;
-  /* box-shadow: none; */
-}
-.loginBtn > div {
-  margin: 20px;
-  color: white;
-  font-weight: bold;
-}
+
 @media screen and (max-width: 1000px) {
   .loginBtn {
-    width: 200px
+    width: 200px;
   }
 }
+
 @media screen and (max-width: 900px) {
   .loginBtn {
-    width: 150px
+    width: 150px;
   }
 }
+
 @media screen and (max-width: 768px) {
   .loginBtn {
     display: none;
@@ -73,12 +89,14 @@ li {
 }
 
 /* 오름차순/내림차순 필터관련 */
+
 .filterOut {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 25px;
   font-size: 15px;
 }
+
 .streamBtns {
   display: flex;
   flex-direction: row;
@@ -86,80 +104,93 @@ li {
   margin: 20px;
   margin-bottom: 10px;
 }
+
 .greenDot {
   width: 8px;
   margin: 2px;
 }
+
 .upStream {
   margin-right: 10px;
   cursor: pointer;
   transition-duration: 0.3s;
   color: #5a6167;
 }
+
 .grayDot {
   width: 8px;
   margin: 2px;
 }
+
 .downStream {
   cursor: pointer;
   transition-duration: 0.3s;
-  color: #cbd0d6;
+  color: $grayChar;
 }
+
 .filterBtn {
   display: grid;
   grid-template-columns: 5fr 1fr;
-  /* border: 1px solid black; */
   margin: 20px;
 }
+
 .filterBtnName {
-  border: 2px solid #f0f1f2;
+  border: 2px solid $grayBorder;
   border-radius: 4px;
-  color: #cbd0d6;
+  color: $grayChar;
   width: 50px;
   height: 20px;
   text-align: center;
   cursor: pointer;
-  /* padding: 20px; */
   transition-duration: 0.3s;
   margin-left: 30px;
-}
-.filterBtnName:hover {
-  transform: scale(1.05);
-  letter-spacing: 0.1rem;
+
+  &:hover {
+    transform: scale(1.05);
+    letter-spacing: 0.1rem;
+  }
 }
 
 /* 퀘스쳔 컴포넌트 부분 */
+
 .QuestionOut {
-  border: 2px solid #f0f1f2;
+  border: 2px solid $grayBorder;
   border-radius: 5px;
   margin: 20px;
   margin-top: 0px;
 }
+
 .categoryOut {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid #f0f1f2;
+  border-bottom: 1px solid $grayBorder;
   margin: 20px;
   padding-bottom: 10px;
-  color: #cbd0d6;
+  color: $grayChar;
 }
+
 .categoryId {
   text-align: right;
 }
 
 .idDateOut {
-  display: grid;
-  grid-template-columns: 1fr 10fr;
+  display: flex;
   margin: 20px;
 }
+
 .userId {
-  color: #00c853;
+  color: $comentoGreen;
 }
+
+.idDateBar {
+  margin: 0 5px 0 5px;
+  color: $grayBorder;
+}
+
 .createdAt {
   color: #7c8186;
-  padding-left: 15px;
-  border-left: 1px solid #f0f1f2;
 }
+
 @media screen and (max-width: 768px) {
   .createdAt {
     display: none;
@@ -169,6 +200,7 @@ li {
 .navlink {
   text-decoration: none !important;
 }
+
 .title {
   margin: 20px;
   font-size: 20px;
@@ -176,17 +208,20 @@ li {
   color: black;
   cursor: pointer;
 }
+
 .contents {
   margin: 20px;
-  color: #777b81;
+  color: $grayContents;
 }
 
 /* 스폰서부분 */
+
 .sponserOut {
   margin: 20px;
-  border: 2px solid #f0f1f2;
+  border: 2px solid $grayBorder;
   border-radius: 5px;
 }
+
 .sponsered {
   color: #cbd0d6;
   margin: 20px;
@@ -197,6 +232,7 @@ li {
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
+
 @media screen and (max-width: 768px) {
   .sponBodyOut {
     display: flex;
@@ -207,12 +243,13 @@ li {
 .sponPics {
   width: 180px;
   height: 100px;
-  background-color: #f4f5f7;
+  background-color: $grayBorder;
   color: #e9ecee;
   text-align: center;
   align-items: center;
   padding: 40px 60px;
 }
+
 @media screen and (max-width: 768px) {
   .sponPics {
     padding: 60px;
@@ -221,21 +258,24 @@ li {
     height: 100px;
   }
 }
+
 .sponContentsOut {
   margin: 0 0 20px 20px;
 }
+
 .sponTitle {
   font-size: 20px;
   font-weight: 900;
   cursor: pointer;
   margin-bottom: 20px;
 }
+
 .sponContents {
-  color: #777b81;
+  color: $grayContents;
 }
 
-
 /* 필터부분 */
+
 .FilterOut {
   position: absolute;
   inset: 0;
@@ -247,12 +287,14 @@ li {
   justify-content: center;
   z-index: 1000;
 }
+
 .FilterBody {
   width: 450px;
   height: 250px;
   position: relative;
   background-color: white;
 }
+
 @media screen and (max-width: 768px) {
   .FilterBody {
     padding: 20px;
@@ -260,10 +302,12 @@ li {
     height: 250px;
   }
 }
+
 .BtnOut {
   text-align: right;
   align-items: right;
 }
+
 .FilterXBtn {
   margin-top: 10px;
   position: absolute;
@@ -271,11 +315,13 @@ li {
   left: 420px;
   cursor: pointer;
 }
+
 @media screen and (max-width: 768px) {
   .FilterXBtn {
     left: 260px;
   }
 }
+
 .grayClose {
   width: 12px;
   margin: 2px;
@@ -289,15 +335,17 @@ li {
   position: absolute;
   right: 20px;
   bottom: 20px;
-  background-color: #00c853;
+  background-color: $comentoGreen;
   cursor: pointer;
   color: white;
 }
+
 @media screen and (max-width: 768px) {
   .filterSave {
     width: 250px;
   }
 }
+
 .saveBtnName {
   margin: 12px;
 }
@@ -311,65 +359,72 @@ li {
 .FilterCategory {
   font-size: 18px;
   margin: 10px 0 0 20px;
-  color: #75797c;
+  color: $grayContents;
   display: flex;
 }
+
 .checkbox {
   width: 20px;
-	height: 20px;
-	cursor: pointer;
-  border: 1px solid #75797c;
+  height: 20px;
+  cursor: pointer;
+  border: 1px solid $grayContents;
 }
+
 .categoryName {
   margin: 2px;
 }
 
-
 /* 디테일 */
+
 .DetailOut {
   display: flex;
   flex-direction: column;
   margin: 20px;
 }
+
 .DetailQBody {
-  border: 1px solid #00c853;
+  border: 1px solid $comentoGreen;
   border-radius: 10px;
   margin: 20px 100px 20px 100px;
   margin-top: 0px;
 }
+
 .DetailTitle {
   margin: 20px;
   font-size: 20px;
   font-weight: 900;
   color: black;
 }
+
 .DetailContents {
   margin: 20px;
   margin-top: 0;
-  color: #5b6063;
+  color: $grayContents;
   font-size: 18px;
 }
+
 .DetailCreatedAt {
-  color: #cacdcf;
+  color: $grayContents;
   padding: 0 20px 20px 20px;
 }
+
 @media screen and (max-width: 768px) {
   .DetailOut {
     margin: 0;
   }
+
   .DetailQBody {
     margin: 20px 0 20px 0;
-    border: 2px solid #00c853;
+    border: 2px solid $comentoGreen;
     border-right: none;
     border-left: none;
     border-radius: 0;
   }
-  .DetailTitle {
+
+  .DetailTitle, .DetailContents {
     margin: 20px 0 20px 0;
   }
-  .DetailContents {
-    margin: 20px 0 20px 0;
-  }
+
   .DetailCreatedAt {
     padding: 0 20px 20px 0;
   }
@@ -381,10 +436,12 @@ li {
   flex-direction: row;
   margin: 20px 100px 20px 100px;
 }
+
 .count {
   margin-left: 5px;
-  color: #00c853;
+  color: $comentoGreen;
 }
+
 @media screen and (max-width: 768px) {
   .DetailReplyCnt {
     margin: 20px 0 0 0;
@@ -392,33 +449,39 @@ li {
 }
 
 .replyBody {
-  border: 1px solid #cacdcf;
+  border: 2px solid $grayBorder;
   border-radius: 10px;
   margin: 20px 100px 20px 100px;
   margin-top: 0px;
 }
+
 .replyUser {
-  border-bottom: 1px solid #cacdcf;;
+  border-bottom: 2px solid $grayBorder;
   margin: 20px;
-  color: #696c6e;
+  color: $grayContents;
 }
+
 .replyContents {
   margin: 20px;
 }
+
 .replyCreatedAt {
   margin: 20px;
-  color: #cacdcf;
+  color: $grayChar;
 }
+
 .backBtn {
   display: none;
-  border-bottom: 2px solid #d0d5d8;
+  border-bottom: 2px solid $grayBorder;
   margin: 20px 0 20px 0;
 }
+
 .grayBack {
   /* display: none; */
   width: 10px;
   margin: 20px 0 20px 0;
 }
+
 @media screen and (max-width: 768px) {
   .replyBody {
     margin: 20px 0 20px 0;
@@ -426,26 +489,22 @@ li {
     border-left: none;
     border-radius: 0;
   }
-  .replyUser {
+
+  .replyUser, .replyContents, .replyCreatedAt {
     margin-left: 0;
     margin-right: 0;
   }
-  .replyContents {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .replyCreatedAt {
-    margin-left: 0;
-    margin-right: 0;
-  }
+
   .backBtn {
     display: block;
   }
+
   .grayBack {
     cursor: pointer;
     transition-duration: 0.3s;
-  }
-  .grayBack:hover {
-    width: 11px;
+
+    &:hover {
+      width: 11px;
+    }
   }
 }
