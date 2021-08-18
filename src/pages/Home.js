@@ -8,24 +8,43 @@ import DummyQuestions from "../DummyDatas/DummyQuestions";
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 
-const getPostList = (page) => {
-  return DummyQuestions.filter((post) => post.page === page);
-};
+
 
 function Home({ handlePopup }) {
 
 
-  // !!만약 서버와 연결을 한다면..
+  // 서버에서 피드 데이터를 가져올 때
   // const [datas, setDatas] = useState([]);
-  // useEffect(() => {
-  //   axios.get("serverURL")
-  //   .then(res => {
-  //     console.log(res);
-  //     setDatas(res.data.questions);
-  //   })
-  //   .catch(err => console.log(err))
+  // axios.get("https://problem.comento.kr/api/list")
+  // .then(res => {
+  //   setDatas(res.data)
   // })
-  // 이를 통해 datas라는 배열 상태에다, 서버에서 받아온 데이터 배열을 할당해주면 된다. 그 후는 콘솔로그를 보면서 서버에서 전송해준 데이터 형태를 확인해가면서 할당을 시켜줘야 할 듯 하다.
+  // .catch(err => console.log(err))
+
+
+  // 서버에서 필터 관련 카테고리를 가져올 때
+  // const [filters, setFilters] = useState([]);
+  // axios.get("https://problem.comento.kr/api/category")
+  // .then(res => {
+  //   setFilters(res.data)
+  //   // console.log(res)
+  // })
+  // .catch(err => console.log(err))
+
+  
+  // 서버에서 광고 데이터를 가져올 때
+  // const [spons, setSpons] = useState([]);
+  // axios.get("https://problem.comento.kr/api/ads")
+  // .then(res => {
+  //   setSpons(res.data)
+  // })
+  // .catch(err => console.log(err))
+
+
+  // 서버연결 시 아래의 DummyQuestions을 datas로 변경하면 될 것
+  const getPostList = (page) => {
+    return DummyQuestions.filter((post) => post.page === page);
+  };
 
 
 
