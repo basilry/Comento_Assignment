@@ -8,6 +8,17 @@ import Filter from "./components/Filter";
 import DummyQuestions from "./DummyDatas/DummyQuestions";
 
 function App() {
+
+  // 서버에서 피드 데이터를 가져올 때
+  // const [datas, setDatas] = useState([]);
+  // axios.get("https://problem.comento.kr/api/list")
+  // .then(res => {
+  //   setDatas(res.data)
+  // })
+  // .catch(err => console.log(err))
+  // 하단 렌더링 부분 DummyQuestions 부분 datas로 변경
+
+
   // 홈페이지 여부를 갖고 상단 내비바 조절
   const [isHome, setHome] = useState(true);
   const [isPopup, setPopup] = useState(false);
