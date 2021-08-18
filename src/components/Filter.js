@@ -3,12 +3,10 @@ import React, { useEffect, useState } from "react";
 import grayClose from "../gray_close.png";
 
 function Filter(props) {
-
   const handleClick = () => {
-
-    alert("선택하신 필터가 저장되었습니다!")
-    props.handlePopup()
-  }
+    alert("선택하신 필터가 저장되었습니다!");
+    props.handlePopup();
+  };
 
   return (
     <div className="FilterOut">
@@ -20,19 +18,26 @@ function Filter(props) {
         </div>
         <div className="FilterName">필터</div>
         <div className="FilterCategory">
-          <input className="checkbox" type="checkbox" />
+          <input className="checkbox" type="checkbox" checked="checked" />
           <div className="categoryName">category_name</div>
         </div>
         <div className="FilterCategory">
-          <input className="checkbox" type="checkbox" />
+          <input className="checkbox" type="checkbox" checked="checked" />
           <div className="categoryName">category_name</div>
         </div>
         <div className="FilterCategory">
-          <input className="checkbox" type="checkbox" />
+          <input className="checkbox" type="checkbox" checked="checked" />
           <div className="categoryName">category_name</div>
         </div>
         <div className="filterSave">
-          <div className="saveBtnName" onClick={() => {handleClick()}}>저장하기</div>
+          <div
+            className="saveBtnName"
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            저장하기
+          </div>
         </div>
       </div>
     </div>
